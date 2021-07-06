@@ -9,15 +9,18 @@ import UIKit
 
 class RecommendationCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet weak var labelLabel: UILabel!
+    
+    var desc: String?
+    
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var descButton: UIButton!
+    
+    @IBAction func descriptionButtonPressed(_ sender: Any) {
+        let alert = UIAlertController(title: "Description", message: desc ?? "No description", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

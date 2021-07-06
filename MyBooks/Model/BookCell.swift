@@ -7,17 +7,20 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class BookCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    @IBOutlet weak var labelLabel: UILabel!
+   
+    var desc: String?
+    
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var descriptionButtonPressed: UIButton!
+    
+    @IBAction func descButtonPressed(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Description", message: desc ?? "No description", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)    }
+    
+    
 }
