@@ -1,0 +1,8 @@
+//
+//  BookModel.swift
+//  MyBooks
+//
+//  Created by Daniil Belyaev on 05.07.2021.
+//
+
+import Foundation
